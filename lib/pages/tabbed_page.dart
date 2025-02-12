@@ -1,6 +1,7 @@
+// lib/pages/tabbed_page.dart
 import 'package:flutter/material.dart';
-import 'aktheuelt_tab.dart';  // Ensure this import is correct for AktheueltTab
-import 'aktheuelt_prosess_tab.dart';  // Ensure this import is correct for AktheueltProsessTab
+import 'aktheuelt_tab.dart';           // Your existing tab
+import 'aktheuelt_prosess_tab.dart';   // Updated to load ProcessPage
 import '../components/app_background.dart';
 
 class TabbedPage extends StatelessWidget {
@@ -11,29 +12,29 @@ class TabbedPage extends StatelessWidget {
     return AppBackground(
       child: Center(
         child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 1200), // Limit max width of the content only
+          constraints: const BoxConstraints(maxWidth: 1200),
           child: DefaultTabController(
-            length: 2, // 2 tabs (Aktheuelt & Aktheuelt Prosess)
+            length: 2,
             child: Scaffold(
-              backgroundColor: Colors.transparent,  // Make Scaffold transparent to reveal custom background
+              backgroundColor: Colors.transparent,
               appBar: AppBar(
-                backgroundColor: Colors.transparent, // Make AppBar background transparent
-                elevation: 0, // Remove shadow from AppBar
-                toolbarHeight: 0, // Removes the extra space at the top of the app bar
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                toolbarHeight: 0,
                 bottom: const TabBar(
                   tabs: [
-                    Tab(text: 'Aktheuelt'),         // Correct tab name
-                    Tab(text: 'Aktheuelt Prosess'), // Correct tab name
+                    Tab(text: 'Aktheuelt'),
+                    Tab(text: 'Aktheuelt Prosess'),
                   ],
-                  labelColor: Colors.white, // Set tab text color to white
-                  indicatorColor: Colors.white, // Set indicator (bottom line) color to white
-                  unselectedLabelColor: Color.fromARGB(255, 165, 165, 165), // Non-active tab color gray
+                  labelColor: Colors.white,
+                  indicatorColor: Colors.white,
+                  unselectedLabelColor: Color.fromARGB(255, 165, 165, 165),
                 ),
               ),
               body: const TabBarView(
                 children: [
-                  AktheueltTab(),          // Ensure AktheueltTab is defined and imported correctly
-                  AktheueltProsessTab(),   // Ensure AktheueltProsessTab is defined and imported correctly
+                  AktheueltTab(),
+                  AktheueltProsessTab(),
                 ],
               ),
             ),

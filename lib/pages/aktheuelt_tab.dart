@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './home/home_img_grid.dart'; // Import HomeImgGrid widget
 import './home/introduction.dart'; // Import the Introduction widget
 
 class AktheueltTab extends StatelessWidget {
@@ -28,9 +27,6 @@ class AktheueltTab extends StatelessWidget {
             const Introduction(),
 
             const SizedBox(height: 20), // Add some space between introduction and image grid
-
-            // Add the HomeImgGrid widget here
-            HomeImgGrid(),
           ],
         ),
       ),

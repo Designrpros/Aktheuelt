@@ -2,9 +2,11 @@
 import 'package:flutter/material.dart';
 import 'pages/tabbed_page.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,8 +14,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        brightness: Brightness.light,
       ),
-      home: const TabbedPage(),  // No need to constrain the entire background here
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          brightness: Brightness.dark,
+        ),
+      ),
+      themeMode: ThemeMode.system, // This tells Flutter to follow the system setting
+      debugShowCheckedModeBanner: false,
+      home: const TabbedPage(),
     );
   }
 }
